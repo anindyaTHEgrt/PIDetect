@@ -41,7 +41,7 @@ def bounding_box(image_np, results):
 def generate(chat_input):
     api_key = str(st.secrets["GEMINI_API_KEY"])
     client = genai.Client(
-        api_key=st.secrets["GEMINI_API_KEY"]
+        api_key=api_key
     )
 
     model = "gemini-2.0-flash"
