@@ -1,7 +1,7 @@
 numpy==2.2.3
 opencv_python==4.11.0.86
 Pillow==11.1.0
-protobuf==6.30.0
+protobuf==5.29.3
 streamlit==1.43.1
 streamlit_image_select==0.6.0
 ultralytics==8.3.86
