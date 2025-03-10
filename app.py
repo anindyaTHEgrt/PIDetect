@@ -59,14 +59,14 @@ elif img_path:
 
 # Process the selected image
 if image is not None:
-    st.image(image, caption="Selected Image", use_column_width=True)
+    st.image(image, caption="Selected Image", use_container_width=True)
 
     if st.button("Predict"):
         # Convert image to numpy array for YOLO processing
         image_np = np.array(image)
 
         # Run inference
-        results = model2(image_np, conf=0.1)
+        results = model2(image, conf=0.1)
         with st.status("Processing P&ID..."):
             st.write("Analyzing Data...")
             time.sleep(1)
@@ -89,4 +89,4 @@ if image is not None:
 
         # Convert back to RGB for Streamlit display
         image_rgb = cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)
-        st.image(image_rgb, caption="Processed Image", use_column_width=True)
+        st.image(image_rgb, caption="Processed Image", use_container_width=True)
