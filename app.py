@@ -39,10 +39,9 @@ def bounding_box(image_np, results):
             cv2.putText(image_np, f"{label}", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
 
 def generate(chat_input):
-    api_key = str(st.secrets["GEMINI_API_KEY"])
-    client = genai.Client(
-        api_key=api_key
-    )
+    api_key = str(st.secrets["GEMINI_API_KEY"])  # Ensure it's a string
+
+    client = genai.Client(api_key=api_key)
 
     model = "gemini-2.0-flash"
     contents = [
